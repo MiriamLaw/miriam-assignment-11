@@ -17,8 +17,8 @@
 			<!-- These 4 rows below are for demonstration purposes only
 			     You will need to edit the code below in order to make
 			     it dynamically list ALL 100 transactions from the Repo -->
-			<tr th:each="transaction : $(transactions)">
-				<td><a th:href="@/transactions/{id}(id=${transaction.id})}" th:text="${transaction.id}">Transaction ID</a></td>
+			<tr th:each="transaction : ${transactions}">
+				<td><a th:href="@{/transactions/{id}(id=${transaction.id})}" th:text="${transaction.id}">Transaction ID</a></td>
 				<td th:text="${transaction.date}">Date</td>
 				<td th:text="${transaction.retailer}">Retailer</td>
 				<td th:if="${transaction.type == 'Credit'}" th:text="${transaction.amount}"></td>
