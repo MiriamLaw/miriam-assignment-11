@@ -5,10 +5,14 @@
 </head>
 <body>
 		<div th:if="${transaction != null}">
-			<h1 class="transaction-header">Transaction ID: <span th:text="${transaction.id}"></span> (<span th:text="${transaction.type}"></span>)</h1>
+			<h1 class="transaction-header">
+				Transaction ID: <span th:text="${transaction.id}"></span> 
+				(<span th:text="${transaction.type == 'C' ? 'Credit' : 'Debit'}"></span>)</h1>
 				<div>
 					<p><strong>Date:</strong> <span th:text="${transaction.date}"></span></p>
-					<p><strong>Amount:</strong> <span th:text="${transaction.amount}"></span></p>
+					<p><strong>Amount:</strong> 
+						<span th:if="${transaction.type == 'C'}">-</span>
+						<span th:text="${transaction.amount}"></span></p>
 					<p><strong>Description:</strong> <span th:text="${transaction.description}"></span></p>
 				</div>
 				

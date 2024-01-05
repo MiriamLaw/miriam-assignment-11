@@ -20,7 +20,7 @@ public class TransactionService {
 		}
 	
 	public List<Transaction> findAllTransactions() {
-		//business logic here
+		
 		return transactionRepo.findAll();
 	}
 	public Transaction findTransactionById(Long transactionId) {
