@@ -14,6 +14,10 @@ public class Transaction implements Serializable {
 	private BigDecimal amount;
 	private String type;
 
+	public Transaction() {
+		super();
+	}
+
 	public Long getId() {
 		return id;
 	}
