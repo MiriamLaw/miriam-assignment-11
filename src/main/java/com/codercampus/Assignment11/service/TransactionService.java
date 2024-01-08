@@ -12,17 +12,18 @@ import com.codercampus.Assignment11.repository.TransactionRepository;
 public class TransactionService {
 
 	private final TransactionRepository transactionRepo;
-	
+
 	@Autowired
 	public TransactionService(TransactionRepository transactionRepo) {
 		this.transactionRepo = transactionRepo;
-		
-		}
-	
+
+	}
+
 	public List<Transaction> findAllTransactions() {
-		
+
 		return transactionRepo.findAll();
 	}
+
 	public Transaction findTransactionById(Long transactionId) {
 		return transactionRepo.findById(transactionId).orElse(null);
 	}

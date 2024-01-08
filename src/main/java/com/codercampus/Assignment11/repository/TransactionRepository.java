@@ -30,6 +30,14 @@ public class TransactionRepository {
 				           .findFirst();
 		
 	}
+	
+	void addTransactionForTest(Transaction transaction) {
+		this.transactions.add(transaction);
+	}
+	
+	void clearTransactionsForTest() {
+		this.transactions.clear();
+	}
 
 	/*
 	 * To populate the transactions list with previously "serialized" data from the transactions.txt file
